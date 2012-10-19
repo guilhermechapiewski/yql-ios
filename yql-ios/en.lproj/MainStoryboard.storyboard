@@ -24,16 +24,11 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="Run_OnClick:" destination="2" eventType="touchUpInside" id="vBQ-8G-01t"/>
+                                </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lqQ-RV-9q5">
-                                <color key="backgroundColor" red="0.95556640625" green="0.95556640625" blue="0.95556640625" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="231" id="QOT-7S-3NP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pD-BG-grZ" colorLabel="IBBuiltInLabel-Red">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" text="SELECT * FROM weather.forecast WHERE woeid=2502265" translatesAutoresizingMaskIntoConstraints="NO" id="4pD-BG-grZ" colorLabel="IBBuiltInLabel-Red">
                                 <color key="backgroundColor" red="0.96620244565217395" green="0.96620244565217395" blue="0.96620244565217395" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="229" id="Syx-ky-eKl"/>
@@ -42,19 +37,27 @@
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
                             </textView>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FI7-WR-70o">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lqQ-RV-9q5" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="0iC-2z-j9p"/>
-                            <constraint firstItem="4pD-BG-grZ" firstAttribute="leading" secondItem="lqQ-RV-9q5" secondAttribute="leading" type="default" id="CC1-v8-5gk"/>
+                            <constraint firstAttribute="trailing" secondItem="FI7-WR-70o" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="4cs-Wn-QO1"/>
                             <constraint firstItem="7lh-dR-jSP" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="JHg-q2-mmM"/>
+                            <constraint firstItem="FI7-WR-70o" firstAttribute="top" secondItem="4pD-BG-grZ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Wbk-NT-bGM"/>
                             <constraint firstItem="4pD-BG-grZ" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="XAK-qc-hJg"/>
                             <constraint firstAttribute="trailing" secondItem="7lh-dR-jSP" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Xmi-IV-UoF"/>
                             <constraint firstItem="7lh-dR-jSP" firstAttribute="leading" secondItem="4pD-BG-grZ" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="hcw-S3-yht"/>
-                            <constraint firstItem="lqQ-RV-9q5" firstAttribute="top" secondItem="4pD-BG-grZ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="m7U-X9-00t"/>
-                            <constraint firstItem="lqQ-RV-9q5" firstAttribute="top" secondItem="7lh-dR-jSP" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="q2H-5b-qwL"/>
+                            <constraint firstItem="FI7-WR-70o" firstAttribute="top" secondItem="7lh-dR-jSP" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="iYS-UJ-kbe"/>
+                            <constraint firstAttribute="bottom" secondItem="FI7-WR-70o" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="o5u-oM-Xyg"/>
+                            <constraint firstItem="FI7-WR-70o" firstAttribute="leading" secondItem="4pD-BG-grZ" secondAttribute="leading" type="default" id="uEp-DG-1uz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="QueryTextView" destination="4pD-BG-grZ" id="XUi-OC-nLh"/>
+                        <outlet property="ResultsWebView" destination="FI7-WR-70o" id="uP8-pB-LoR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
@@ -66,6 +69,11 @@
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Run_OnClick:"/>
+                <relationship kind="outlet" name="QueryTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="ResultsWebView" candidateClass="UIWebView"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
