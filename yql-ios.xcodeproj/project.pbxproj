@@ -23,6 +23,8 @@
 		BB1775851631B65C00659E8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1775601631B65C00659E8A /* Foundation.framework */; };
 		BB17758D1631B65C00659E8A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB17758B1631B65C00659E8A /* InfoPlist.strings */; };
 		BB1775901631B65C00659E8A /* yql_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BB17758F1631B65C00659E8A /* yql_iosTests.m */; };
+		BB17759B1631DC0E00659E8A /* YQL.m in Sources */ = {isa = PBXBuildFile; fileRef = BB17759A1631DC0D00659E8A /* YQL.m */; };
+		BB17759C1631DC0E00659E8A /* YQL.m in Sources */ = {isa = PBXBuildFile; fileRef = BB17759A1631DC0D00659E8A /* YQL.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		BB17758C1631B65C00659E8A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BB17758E1631B65C00659E8A /* yql_iosTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = yql_iosTests.h; sourceTree = "<group>"; };
 		BB17758F1631B65C00659E8A /* yql_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = yql_iosTests.m; sourceTree = "<group>"; };
+		BB1775991631DC0D00659E8A /* YQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQL.h; sourceTree = "<group>"; };
+		BB17759A1631DC0D00659E8A /* YQL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQL.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,8 @@
 				BB1775791631B65C00659E8A /* ViewController.h */,
 				BB17757A1631B65C00659E8A /* ViewController.m */,
 				BB1775651631B65C00659E8A /* Supporting Files */,
+				BB1775991631DC0D00659E8A /* YQL.h */,
+				BB17759A1631DC0D00659E8A /* YQL.m */,
 			);
 			path = "yql-ios";
 			sourceTree = "<group>";
@@ -273,6 +279,7 @@
 				BB17756B1631B65C00659E8A /* main.m in Sources */,
 				BB17756F1631B65C00659E8A /* AppDelegate.m in Sources */,
 				BB17757B1631B65C00659E8A /* ViewController.m in Sources */,
+				BB17759B1631DC0E00659E8A /* YQL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB1775901631B65C00659E8A /* yql_iosTests.m in Sources */,
+				BB17759C1631DC0E00659E8A /* YQL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
