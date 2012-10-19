@@ -11,8 +11,8 @@
 @interface ViewController : UIViewController
 
 @property (nonatomic, retain) IBOutlet UITextView *QueryTextView;
-@property (nonatomic, retain) IBOutlet UIWebView *ResultsWebView;
+@property (nonatomic, retain) IBOutlet UITextView *ResultsTextView;
 
--(IBAction) Run_OnClick: (id) sender;
+-(IBAction)Run_OnClick:(id)sender;
 
 @end

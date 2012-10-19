@@ -17,7 +17,7 @@
 
 @implementation ViewController
 @synthesize QueryTextView;
-@synthesize ResultsWebView;
+@synthesize ResultsTextView;
 
 - (void)viewDidLoad
 {
@@ -31,7 +31,14 @@
     // Dispose of any resources that can be recreated.
 }
 
--(IBAction) Run_OnClick: (id) sender {
+-(IBAction)backgroundTouched:(id)sender {
+    [QueryTextView resignFirstResponder];
+    [ResultsTextView resignFirstResponder];
+}
+
+-(IBAction)Run_OnClick:(id)sender {
+    [sender resignFirstResponder];
+    
     NSString *query = [NSString stringWithFormat:@"%@%@%@", QUERY_PREFIX, [QueryTextView.text stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding], QUERY_SUFFIX];
     
     NSLog(@"Request URL: %@", query);
@@ -43,9 +50,8 @@
     
     NSLog(@"Results: %@", [results valueForKeyPath:@"query.results"]);
     
-    NSString *html = [NSString stringWithFormat:@"<html><body><pre>%@</pre></body></html>", [results valueForKeyPath:@"query.results"]];
-    
-    [ResultsWebView loadHTMLString:html baseURL:nil];
+    // lame :(
+    ResultsTextView.text = [NSString stringWithFormat:@"%@", [results valueForKeyPath:@"query.results"]];
 }
 
 @end
