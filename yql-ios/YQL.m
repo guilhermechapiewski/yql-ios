@@ -14,8 +14,6 @@
 @implementation YQL
 
 - (NSString *) query: (NSString *)statement {
-    NSLog(@"Start yql call");
-    
     NSString *query = [NSString stringWithFormat:@"%@%@%@", QUERY_PREFIX, [statement stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding], QUERY_SUFFIX];
     
     NSLog(@"Request URL: %@", query);
@@ -27,8 +25,6 @@
     if (error) NSLog(@"[%@ %@] JSON error: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error.localizedDescription);
     
     NSLog(@"Results: %@", [results valueForKeyPath:@"query.results"]);
-    
-    NSLog(@"Done yql call");
     
     return [NSString stringWithFormat:@"%@", [results valueForKeyPath:@"query.results"]];
 }
