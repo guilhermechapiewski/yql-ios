@@ -8,7 +8,7 @@
 
 Import **YQL.h** and **YQL.m** into your project. Use the *query* method to invoke YQL, passing the desired query as a parameter:
 
-`NSDictionary *results = [yql query:QueryTextView.text];`
+`NSDictionary *results = [yql query:@"SELECT * FROM weather.forecast WHERE woeid=2502265"];`
 
 You will get a `NSDictionary` object containing the results. The structure of this dictionary is the same you would get from a query in the [YQL console](http://developer.yahoo.com/yql/console/). You can use `valueForKeyPath` to access the desired data in the results structure:
 
