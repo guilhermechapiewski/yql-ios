@@ -21,7 +21,7 @@
 
 - (void)testShouldNotReturnResultForValidQuery {
     NSDictionary *results = [yql query:@"this is an invalid query"];
-    STAssertNil(results, @"Results should not be nil");
+    STAssertNil(results, @"Results should be nil if a query is invalid");
 }
 
 - (void)testShouldReturnResultForValidQuery {
