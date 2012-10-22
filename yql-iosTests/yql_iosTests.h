@@ -7,7 +7,10 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "YQL.h"
 
-@interface yql_iosTests : SenTestCase
+@interface yql_iosTests : SenTestCase {
+    YQL *yql;
+}
 
 @end

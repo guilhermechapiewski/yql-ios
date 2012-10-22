@@ -10,23 +10,25 @@
 
 @implementation yql_iosTests
 
-- (void)setUp
-{
+- (void)setUp {
     [super setUp];
-    
-    // Set-up code here.
+    yql = [[YQL alloc] init];
 }
 
-- (void)tearDown
-{
-    // Tear-down code here.
-    
+- (void)tearDown {
     [super tearDown];
 }
 
-- (void)testExample
-{
-    STFail(@"Unit tests are not implemented yet in yql-iosTests");
+- (void)testShouldNotReturnResultForValidQuery {
+    NSDictionary *results = [yql query:@"this is an invalid query"];
+    STAssertNil(results, @"Results should not be nil");
+}
+
+- (void)testShouldReturnResultForValidQuery {
+    NSDictionary *results = [yql query:@"show tables"];
+    STAssertNotNil(results, @"Results should not be nil");
+    int count = [[results valueForKeyPath:@"query.count"] intValue];
+    STAssertTrue(count > 0, @"There should be at least one table");
 }
 
 @end
