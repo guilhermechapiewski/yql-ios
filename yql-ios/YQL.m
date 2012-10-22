@@ -13,10 +13,8 @@
 
 @implementation YQL
 
-- (NSString *) query: (NSString *)statement {
+- (NSDictionary *) query: (NSString *)statement {
     NSString *query = [NSString stringWithFormat:@"%@%@%@", QUERY_PREFIX, [statement stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding], QUERY_SUFFIX];
-    
-    NSLog(@"Request URL: %@", query);
     
     NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:query] encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
     NSError *error = nil;
@@ -24,9 +22,7 @@
     
     if (error) NSLog(@"[%@ %@] JSON error: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error.localizedDescription);
     
-    NSLog(@"Results: %@", [results valueForKeyPath:@"query.results"]);
-    
-    return [NSString stringWithFormat:@"%@", [results valueForKeyPath:@"query.results"]];
+    return results;
 }
 
 @end

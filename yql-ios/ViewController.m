@@ -30,8 +30,8 @@
 }
 
 -(IBAction)Run_OnClick:(id)sender {
-    NSString *results = [yql query:QueryTextView.text];
-    ResultsTextView.text = results;
+    NSDictionary *results = [yql query:QueryTextView.text];
+    ResultsTextView.text = [[results valueForKeyPath:@"query.results"] description];
 }
 
 @end

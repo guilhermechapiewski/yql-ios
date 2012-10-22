@@ -10,6 +10,6 @@
 
 @interface YQL : NSObject
 
-- (NSString *)query:(NSString *)statement;
+- (NSDictionary *)query:(NSString *)statement;
 
 @end

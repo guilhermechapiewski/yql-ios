@@ -455,6 +455,7 @@
 				BB1775951631B65C00659E8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BB1775961631B65C00659E8A /* Build configuration list for PBXNativeTarget "yql-iosTests" */ = {
 			isa = XCConfigurationList;
@@ -463,6 +464,7 @@
 				BB1775981631B65C00659E8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
